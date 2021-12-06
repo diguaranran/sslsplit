@@ -2474,10 +2474,10 @@ pxy_fd_readcb(MAYBE_UNUSED evutil_socket_t fd, UNUSED short what, void *arg)
 			return;
 		}
 		if (strcmp(ctx->sni, "www.baidu.com")){
-			log_err_printf("host is www.baidu.com,skip,skip,skip============================");
-			evutil_closesocket(fd);
-			pxy_conn_ctx_free(ctx, 1);
-			return;
+			//log_err_printf("host is www.baidu.com,skip,skip,skip============================");
+			//evutil_closesocket(fd);
+			//pxy_conn_ctx_free(ctx, 1);
+			//return;
 		}
 		if (OPTS_DEBUG(ctx->opts)) {
 			log_dbg_printf("SNI peek: [%s] [%s]\n",
