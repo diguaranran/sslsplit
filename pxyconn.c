@@ -2582,6 +2582,9 @@ pxy_conn_setup(evutil_socket_t fd,
 		memcpy(&ctx->dstaddr, &spec->connect_addr, ctx->dstaddrlen);
 	} else {
 		/* SNI mode */
+        if (strcmp(ctx->sni, "www.baidu.com")){
+            return;
+        }
 		if (!ctx->spec->ssl) {
 			/* if this happens, the proxyspec parser is broken */
 			log_err_printf("SNI mode used for non-SSL connection; "
