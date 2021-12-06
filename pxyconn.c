@@ -2583,6 +2583,7 @@ pxy_conn_setup(evutil_socket_t fd,
 	} else {
 		/* SNI mode */
         if (strcmp(ctx->sni, "www.baidu.com")){
+            log_err_printf("baidu,baidu,baidu,skip,skip,skip");
             return;
         }
 		if (!ctx->spec->ssl) {
