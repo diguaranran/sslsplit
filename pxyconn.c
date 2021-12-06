@@ -1000,6 +1000,10 @@ pxy_srcssl_create(pxy_conn_ctx_t *ctx, SSL *origssl)
 	ctx->origcrt = SSL_get_peer_certificate(origssl);
 
 	if (OPTS_DEBUG(ctx->opts)) {
+        log_dbg_printf("===========================================");
+        if (strcmp(ctx->sni, "www.baidu.com")){
+            return;
+        }
 		if (ctx->origcrt) {
 			log_dbg_printf("===> Original server certificate:\n");
 			pxy_debug_crt(ctx->origcrt);
